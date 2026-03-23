@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期货监控</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>📊 期货监控</h2>
+            </div>
+            <nav class="commodity-list">
+                <div class="commodity-item active" data-key="gold">
+                    <span class="dot" style="background: #FFD700;"></span>
+                    <div class="commodity-info">
+                        <span class="name">黄金</span>
+                        <span class="price" id="price-gold">--</span>
+                    </div>
+                </div>
+                <div class="commodity-item" data-key="oil">
+                    <span class="dot" style="background: #8B4513;"></span>
+                    <div class="commodity-info">
+                        <span class="name">原油</span>
+                        <span class="price" id="price-oil">--</span>
+                    </div>
+                </div>
+                <div class="commodity-item" data-key="dxy">
+                    <span class="dot" style="background: #228B22;"></span>
+                    <div class="commodity-info">
+                        <span class="name">美元指数 DXY</span>
+                        <span class="price" id="price-dxy">--</span>
+                    </div>
+                </div>
+                <div class="commodity-item" data-key="vix">
+                    <span class="dot" style="background: #DC143C;"></span>
+                    <div class="commodity-info">
+                        <span class="name">VIX 恐慌指数</span>
+                        <span class="price" id="price-vix">--</span>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 右侧主区域 -->
+        <main class="main-content">
+            <div class="toolbar">
+                <div class="current-title" id="currentTitle">黄金</div>
+                <div class="interval-tabs">
+                    <button class="tab active" data-interval="1h">1H</button>
+                    <button class="tab" data-interval="4h">4H</button>
+                    <button class="tab" data-interval="1d">1D</button>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <div id="klineChart"></div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>加载数据中...</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
